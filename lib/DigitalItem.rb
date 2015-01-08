@@ -1,21 +1,13 @@
-# You are on your own... good luck.
-
-# Oh no the future is here!! Now we need to support digital items. Digital items are things that are downloaded and therefore they do not have a finite quantity.
-
-# * DigitalItem < Item
-#     * Quantity should always be 1
-#     * Quantity does not decrease when sold
-#     * Quantity should not increase on stock
-
 require_relative 'Item.rb'
 
 class Digitalitem < Item
 
-	attr_reader :quantity
+	attr_reader :quantity, :weight
 
-	def initialize name,price,quantity
-		super(name,price)
+	def initialize name,price,weight,quantity
+		super(name,price,weight)
 		@quantity = 1
+		@weight = -1
 	end
 
 	def return amount

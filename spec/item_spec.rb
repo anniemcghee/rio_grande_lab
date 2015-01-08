@@ -4,7 +4,7 @@ require_relative '../lib/Item'
 describe Item do
 
   before(:context) do
-    @item = Item.new("Generic Item",1.99)
+    @item = Item.new("Generic Item",1.99,0)
   end
 
   describe "Initialization" do
@@ -16,6 +16,9 @@ describe Item do
     end
     it "is assigned a price" do
       expect(@item.price).to eq(1.99)
+    end
+    it "is assigned a weight" do
+      expect(@item.weight).to eq(0)
     end
   end
 
@@ -35,6 +38,14 @@ describe Item do
       expect(@item.description).to eq("")
       @item.description="test"
       expect(@item.description).to eq("test")
+    end
+    it "should be able to get and set weight" do
+      expect(@item.weight).to eq(0)
+      @item.weight=1
+      expect(@item.weight).to eq(1)
+    end   
+    it "should be able to get ship_price_per_oz" do
+      expect(@item.ship_price_per_oz).to eq(1.2)
     end    
   end
 
@@ -53,7 +64,18 @@ describe Item do
       result = @item.sell 3
       expect(result).to eq(true)
       expect(@item.quantity).to eq(2)
-    end    
+    end
+    it "should be able to return" do
+      result = @item.return 5
+      expect(result).to eq(true)
+      expect(@item.quantity).to eq(7)
+    end
+    it "should be able to calculate ship price" do
+      result = @item.ship_price
+      result2 = @item.weight * @item.ship_price_per_oz
+      expect(result).to eq(true)
+      expect(result2).to eq(1.2)
+    end     
   end
 
 end

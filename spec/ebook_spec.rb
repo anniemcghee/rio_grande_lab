@@ -4,7 +4,7 @@ require_relative '../lib/EBook'
 describe Ebook do
 	
 	before(:context) do
-		@ebook = Ebook.new("Pink",9.99,1)
+		@ebook = Ebook.new("Pink",9.99,-1,1)
 	end
 
 	describe "Initialization of Ebook" do
@@ -19,6 +19,9 @@ describe Ebook do
 		end
 		it "Has been assigned a quantity" do
 			expect(@ebook.quantity).to eq(1)
+		end
+		it "Has been assigned a weight" do
+			expect(@ebook.weight).to eq(-1)
 		end
 	end
 
@@ -49,6 +52,9 @@ describe Ebook do
   	end
   	it "should be able to ONLY READ quantity" do
 		expect(@ebook.quantity).to eq(1)
+	end
+	it "should be able to ONLY READ weight" do
+		expect(@ebook.weight).to eq(-1)
 	end
   end
 end

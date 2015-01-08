@@ -1,14 +1,11 @@
 require_relative 'spec_helper'
 require_relative '../lib/Bluray'
 
-# * Bluray < Item
-#     * Run time
-#     * Director
-#     * Producer
+
 describe Bluray do
 
   before(:context) do
-    @bluray = Bluray.new("Blake",42.99)
+    @bluray = Bluray.new("Blake",42.99,0)
   end
 
   describe "Initialization of a new Bluray" do
@@ -21,6 +18,9 @@ describe Bluray do
   	it "has been assigned a price" do
   		expect(@bluray.price).to eq(42.99)
   	end
+    it "has been assigned a weight" do
+      expect(@bluray.weight).to eq(0)
+    end
   end
 
   describe "Inheritance of Bluray" do
@@ -53,6 +53,11 @@ describe Bluray do
   		@bluray.producer="Nick"
   		expect(@bluray.producer).to eq("Nick")
   	end
+    it "should be able to get and set the weight" do
+      expect(@bluray.weight).to eq(0)
+      @bluray.weight=90
+      expect(@bluray.weight).to eq(90)
+    end
   end
 
   #check inilization

@@ -4,7 +4,7 @@ require_relative '../lib/Movie'
 describe Movie do
 	
 	before(:context) do
-		@movie = Movie.new("Anil",40.00,1)
+		@movie = Movie.new("Anil",40.00,-1,1)
 	end
 
 	describe "Initialization of Movie" do
@@ -19,6 +19,9 @@ describe Movie do
 		end
 		it "Has been assigned a quantity" do
 			expect(@movie.quantity).to eq(1)
+		end
+		it "Has been assigned a weight" do
+			expect(@movie.weight).to eq(-1)
 		end
 	end
 
@@ -54,6 +57,9 @@ describe Movie do
   	end
   	it "should be able to ONLY READ quantity" do
 		expect(@movie.quantity).to eq(1)
+	end
+	it "should be able to ONLY READ weight" do
+		expect(@movie.weight).to eq(-1)
 	end
   end
 

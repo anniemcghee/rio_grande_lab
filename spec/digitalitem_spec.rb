@@ -1,19 +1,10 @@
-# You are on your own... good luck.
-
-# Oh no the future is here!! Now we need to support digital items. Digital items are things that are downloaded and therefore they do not have a finite quantity.
-
-# * DigitalItem < Item
-#     * Quantity should always be 1
-#     * Quantity does not decrease when sold
-#     * Quantity should not increase on stock
-
 require_relative 'spec_helper'
 require_relative '../lib/DigitalItem'
 
 describe Digitalitem do
 
 	before :context do
-		@digital_item = Digitalitem.new("Song",0.99,1)
+		@digital_item = Digitalitem.new("Song",0.99,1,-1)
 	end
 
 	describe "Initialization of a new Digital Item " do
@@ -28,6 +19,9 @@ describe Digitalitem do
 		end
 		it "Has been assigned a quantity" do
 			expect(@digital_item.quantity).to eq(1)
+		end
+		it "Has been assigned a weight" do
+			expect(@digital_item.weight).to eq(-1)
 		end
 	end
 
@@ -56,6 +50,10 @@ describe Digitalitem do
 			result = @digital_item.return 5
       		expect(result).to eq(true)
       		expect(@digital_item.quantity).to eq(1)
+      	end
+      	it "should be able to return false on digital items" do
+			result = @digital_item.ship_price
+      		expect(result).to eq(false)
       	end
     end 
 

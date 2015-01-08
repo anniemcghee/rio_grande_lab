@@ -4,7 +4,7 @@ require_relative '../lib/Book'
 describe Book do
 
   before(:context) do
-    @book = Book.new("Great Gatsby",44.99)
+    @book = Book.new("Great Gatsby",44.99,0)
   end
 
   describe "Initialization of Book" do
@@ -17,6 +17,9 @@ describe Book do
   	it "has been assigned a price" do
   		expect(@book.price).to eq(44.99)
   	end
+    it "has been assigned a weight" do
+      expect(@book.weight).to eq(0)
+    end
   end
 
   describe "Inheritance of Book" do
@@ -44,6 +47,10 @@ describe Book do
   		@book.price=55.99
   		expect(@book.price).to eq(55.99)
   	end
+    it "should be able to get and set weight" do
+      @book.weight=90
+      expect(@book.weight).to eq(90)
+    end
   end
 
   #check inilization

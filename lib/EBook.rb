@@ -1,16 +1,11 @@
-# You are on your own... good luck.
-# * EBook < DigitalItem
-#     * Pages
-#     * Author
-
 require_relative 'DigitalItem.rb'
 
 class Ebook < Digitalitem
 
 	attr_accessor :author, :pages
 
-	def initialize name,price,quantity
-		super(name,price,quantity)
+	def initialize name,price,weight,quantity
+		super(name,price,weight,quantity)
 		@author = ""
 		@pages = 0
 	end

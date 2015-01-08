@@ -4,7 +4,7 @@ require_relative '../lib/Song'
 describe Song do
 	
 	before(:context) do
-		@song = Song.new("Love",1.99,1)
+		@song = Song.new("Love",1.99,-1,1)
 	end
 
 	describe "Initialization of Song" do
@@ -16,6 +16,9 @@ describe Song do
 		end
 		it "has been assigned a price" do
 			expect(@song.price).to eq(1.99)
+		end
+		it "Has been assigned a weight" do
+			expect(@song.weight).to eq(-1)
 		end
 		it "Has been assigned a quantity" do
 			expect(@song.quantity).to eq(1)
@@ -49,6 +52,9 @@ describe Song do
   	end
   	it "should be able to ONLY READ quantity" do
 		expect(@song.quantity).to eq(1)
+	end
+	it "should be able to ONLY READ weight" do
+		expect(@song.weight).to eq(-1)
 	end
   end
 
