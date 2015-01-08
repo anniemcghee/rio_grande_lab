@@ -5,7 +5,7 @@ require_relative '../lib/Bluray'
 describe Bluray do
 
   before(:context) do
-    @bluray = Bluray.new("Blake",42.99,0)
+    @bluray = Bluray.new("Blake",42.99)
   end
 
   describe "Initialization of a new Bluray" do

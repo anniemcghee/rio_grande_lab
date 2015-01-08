@@ -3,7 +3,7 @@ class Cd < Item
 
 	attr_accessor :artist, :tracks, :run_time_in_minutes
 
-	def initialize name,price,weight
+	def initialize name,price,weight=0
 		super(name,price,weight)
 		@artist = ""
 		@tracks = 0

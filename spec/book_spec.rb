@@ -4,7 +4,7 @@ require_relative '../lib/Book'
 describe Book do
 
   before(:context) do
-    @book = Book.new("Great Gatsby",44.99,0)
+    @book = Book.new("Great Gatsby",44.99)
   end
 
   describe "Initialization of Book" do

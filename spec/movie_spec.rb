@@ -4,7 +4,7 @@ require_relative '../lib/Movie'
 describe Movie do
 	
 	before(:context) do
-		@movie = Movie.new("Anil",40.00,-1,1)
+		@movie = Movie.new("Anil",40.00)
 	end
 
 	describe "Initialization of Movie" do

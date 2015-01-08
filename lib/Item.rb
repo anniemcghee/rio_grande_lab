@@ -2,12 +2,14 @@ class Item
     attr_reader :quantity, :ship_price_per_oz
     attr_accessor :name, :price, :description, :weight
 
-    def initialize name, price, weight
+    def initialize name, price, weight=0
         @name = name
         @price = price
-        @weight = 0
+        @weight = weight
         @quantity = 0
         @description = ""
+        # need to make this a @@ variable and adapt everywhere it's calaculated
+        # hardcode it in test 
         @ship_price_per_oz = 1.2
     end
 

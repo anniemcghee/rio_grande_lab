@@ -4,7 +4,7 @@ require_relative '../lib/EBook'
 describe Ebook do
 	
 	before(:context) do
-		@ebook = Ebook.new("Pink",9.99,-1,1)
+		@ebook = Ebook.new("Pink",9.99)
 	end
 
 	describe "Initialization of Ebook" do

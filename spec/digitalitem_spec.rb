@@ -4,7 +4,7 @@ require_relative '../lib/DigitalItem'
 describe Digitalitem do
 
 	before :context do
-		@digital_item = Digitalitem.new("Song",0.99,1,-1)
+		@digital_item = Digitalitem.new("Song",0.99)
 	end
 
 	describe "Initialization of a new Digital Item " do
@@ -51,6 +51,7 @@ describe Digitalitem do
       		expect(result).to eq(true)
       		expect(@digital_item.quantity).to eq(1)
       	end
+      	# need to add tests for sell and stock returning true and false
       	it "should be able to return false on digital items" do
 			result = @digital_item.ship_price
       		expect(result).to eq(false)

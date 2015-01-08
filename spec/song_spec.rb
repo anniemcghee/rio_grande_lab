@@ -4,7 +4,7 @@ require_relative '../lib/Song'
 describe Song do
 	
 	before(:context) do
-		@song = Song.new("Love",1.99,-1,1)
+		@song = Song.new("Love",1.99)
 	end
 
 	describe "Initialization of Song" do

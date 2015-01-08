@@ -4,7 +4,7 @@ require_relative '../lib/Cd'
 describe Cd do
 
   before(:context) do
-    @cd = Cd.new("Hozier",9.99,0)
+    @cd = Cd.new("Hozier",9.99)
   end
 
   describe "Initialization of a new Cd" do
